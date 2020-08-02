@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createRef, useEffect } from 'react';
+import './App.css'
 
 function App() {
+  const tablature = createRef();
+  const windowWidth = window.innerWidth * 0.9;
+  const windowHeight = window.innerHeight * 0.9;
+
+  useEffect(() => {
+    console.log('render');
+    const ctx = tablature.current.getContext('2d');
+    ctx.fillRect(0, 0, 100, 100);
+  }, [tablature])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <canvas id="tablature" ref={tablature} width={windowWidth} height={windowHeight}></canvas>
     </div>
   );
 }
