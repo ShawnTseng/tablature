@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const canvas = tablature.current.getContext('2d');
     if (canvas) {
-      row.count = 5;
+      row.count = 5; // TODO:導入redux修復
       drawSheet(canvas, windowWidth);
     }
   }, [tablature, windowWidth])
