@@ -7,15 +7,8 @@ body {
   padding: 0;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 canvas {
+  margin: 24px;
   border: 1px solid black;
   box-sizing: border-box;
 }
